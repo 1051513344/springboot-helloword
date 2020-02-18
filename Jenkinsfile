@@ -4,7 +4,7 @@ pipeline {
    stages {
       stage('pull code') {
          steps {
-            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'ea3e97ed-099f-448e-9e85-13e950cbf2b6', url: 'https://github.com/1051513344/springboot-helloword.git']]])
+            checkout([$class: 'GitSCM', branches: [[name: '*/${branch}']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'ea3e97ed-099f-448e-9e85-13e950cbf2b6', url: 'https://github.com/1051513344/springboot-helloword.git']]])
          }
       }
       stage('build project') {
